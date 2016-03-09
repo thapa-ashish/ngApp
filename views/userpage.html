@@ -1,0 +1,74 @@
+<div id="userPage">
+<h1>Product Management</h1>
+<form ng-controller="addProductController as addCtrl">
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 form-control-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Product Name" ng-model="addCtrl.product.name" required="true">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 form-control-label">Manufactured By</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputPassword3" placeholder="Manufactured By" ng-model="addCtrl.product.by" required="true">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2">Radios</label>
+    <div class="col-sm-10">
+      <div class="radio">
+        <label>
+          <input type="radio" name="gridRadios" id="gridRadios1" value="YES" ng-model="addCtrl.product.inStock">
+         In Stock
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="gridRadios" id="gridRadios2" value="NO" ng-model="addCtrl.product.inStock">
+         Out of Stock
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2">Offers</label>
+    <div class="col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" ng-true-value="YES" ng-false-value="NO" ng-model="addCtrl.product.offers"> Offers
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-secondary btn-success" ng-click="addCtrl.addProduct()">Add Product</button>
+    </div>
+  </div>
+
+<div class="container col-sm-6 ">
+   <table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Product Name</th>
+        <th>Manufactured By</th>
+        <th>In/Out Stock</th>
+        <th>Offers</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="success" ng-repeat="product in addCtrl.products">
+      <td>{{$index + 1}}</td>
+      <td>{{product.name}}</td>
+        <td>{{product.by}}</td>
+        <td>{{product.inStock}}</td>
+        <td>{{product.offers}}</td>
+        <td><input type="button" class="btn btn-secondary btn-success" value="edit"  ng-click="addCtrl.edit()"></td>
+         <td><input type="button" class="btn btn-secondary btn-danger" value="delete" ng-click="addCtrl.delete()"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</form>
+</div>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <title>Angular Js</title>
+    <script type="text/javascript" src="libraries/jquery.js"></script>
+    <script type="text/javascript" src="libraries/angular/angular.min.js"></script>
+    <script type="text/javascript" src="libraries/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="libraries/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="libraries/styles.css"/>
+</head>
+<body ng-app="myApp">
+    <div class="container" ng-controller="loginController as loginCtrl">
+        <div class="navbar navbar-default navbar-fixed-top" ng-hide="loginCtrl.hidemenu">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#/">Angular Site</a>
+                </div>
+                <center>
+                    <div class="navbar-collapse collapse" id="navbar-main">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#/home">Home</a>
+                            </li>
+                            <li><a href="#/about">About</a>
+                            </li>
+                            <li><a href="#/contact">Contact</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a>
+                                    </li>
+                                    <li><a href="#">Another action</a>
+                                    </li>
+                                    <li><a href="#">Something else here</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">One more separated link</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="navbar-form navbar-right" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Username" ng-model="loginCtrl.username">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password" ng-model="loginCtrl.password">
+                            </div>
+                            <button type="submit" class="btn btn-default btn-success" ng-click="loginCtrl.login()">Sign In</button>
+                        </form>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="pagesView" ng-view></div>
+
+    <script type="text/javascript" src="app/nav.js"></script>
+    <script type="text/javascript" src="app/login.js"></script>
+    <script type="text/javascript" src="app/addProductController.js"></script>
+
+</body>
+</html>
