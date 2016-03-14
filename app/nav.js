@@ -27,8 +27,12 @@ config(function($routeProvider) {
           //route after successful login
           .when('/user',{
           	templateUrl: 'views/userpage.html',
+            controller:'addProductController'
+          })
+
+          //edit page
+           .when('/edit',{
+            templateUrl: 'views/edit.html',
+            controller:'addProductController'
           });
-
-
-
 });
